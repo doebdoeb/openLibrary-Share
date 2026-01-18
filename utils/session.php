@@ -21,11 +21,11 @@ if (isset($_POST["login"])) {
 
     $user = login($email, $password);
 
-    echo "<pre>Returned User Object: " . print_r($user) . "</pre>";
+    //echo "<pre>Returned User Object: " . print_r($user) . "</pre>";
 
     if ($user != null) {
 
-        echo "<pre>Login successfull: " . print_r($user, true) . "</pre>";
+        //echo "<pre>Login successfull: " . print_r($user, true) . "</pre>";
 
         $_SESSION["uid"] = $user->id; 
         $_SESSION["email"] = $user->email;

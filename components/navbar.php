@@ -26,9 +26,6 @@ $username = $_SESSION["name"] ?? "";
           <a class="nav-link <?= ($page == "../pages/login.php" ? "active" : "") ?>" href="../pages/login.php">Login</a>
         </li>                       
         <?php } ?>
-        <li class="nav-item">
-          <a class="nav-link <?= ($page == "about.php" ? "active" : "") ?>" href="about.php">About</a>
-        </li>
         <?php if ($isAdmin == true) { ?>
         <li class="nav-item">
           <a class="nav-link <?= ($page == "admin.php" ? "active" : "") ?>" href="admin.php">Admin</a>

@@ -37,8 +37,8 @@ function login(string $email, string $password) {
 
     
     if ($stmt->fetch()) {
-        echo "<pre>got into fetch method!</pre>";
-        print_r($user);
+        //echo "<pre>got into fetch method!</pre>";
+        //print_r($user);
 
         if (password_verify($password, $user->password)) {
             //echo "<pre>Password match!</pre>";
@@ -125,7 +125,7 @@ function loadAllFiles() {
     return $files;
 }
 
-function loadAllPdfsAndTags() {
+/*function loadAllPdfsAndTags() {
     global $dbObj;
 
     $result = $dbObj->query("select * from file left join tag on file.fid = tag.fk_fid");
@@ -141,7 +141,7 @@ function loadAllPdfsAndTags() {
         $files[] = $file;
     }
     return $files;
-}
+}*/
 
 function loadUploadsByUser(int $uid) {
     global $dbObj;
@@ -263,4 +263,24 @@ function deleteAllTagsFromFile(int $fid) {
     }
 
     $stmt->close();
+}
+
+function searchFilesByTag($tagValue) {
+    global $dbObj;
+    $stmt = $dbObj->prepare("SELECT DISTINCT f.* FROM file f 
+                             INNER JOIN tag t ON f.fid = t.fk_fid 
+                             WHERE LOWER(t.value) LIKE ?");
+    $searchTerm = '%' . strtolower($tagValue) . '%';
+    $stmt->bind_param('s', $searchTerm);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $files = [];
+    while ($f = $result->fetch_assoc()) {
+        $file = new File();
+        $file->id = intval($f['fid']);
+        $file->fk_uid = intval($f['fk_uid']);
+        $file->filename = $f['filename'];
+        $files[] = $file;
+    }
+    return $files;
 }

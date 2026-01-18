@@ -1,0 +1,204 @@
+/* File Details Page Styles */
+
+h1 {
+    text-align: center;
+    margin: 30px 0;
+    color: #333;
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+
+h2 {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.file-details-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.details-header {
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.header-info {
+    flex: 1;
+}
+
+.file-id {
+    color: #666;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* PDF Viewer */
+.pdf-viewer-container {
+    margin-bottom: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* File Info Section */
+.file-info-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.info-card {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.info-item {
+    margin-bottom: 20px;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+.info-item label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.info-item p {
+    color: #666;
+    margin: 0;
+    padding: 10px;
+    background-color: white;
+    border-radius: 4px;
+    border-left: 3px solid #007bff;
+}
+
+/* Tags Section */
+.tags-section {
+    grid-column: 1 / -1;
+}
+
+.tags-list {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.no-tags {
+    color: #999;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Back Button Section */
+.back-button-section {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #e0e0e0;
+}
+
+.back-button-section .btn {
+    padding: 10px 30px;
+    font-size: 16px;
+}
+
+/* Alert Styles */
+.alert {
+    margin: 40px auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+.alert h4 {
+    margin-bottom: 15px;
+}
+
+.alert .btn {
+    margin-top: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+        margin: 20px 0;
+    }
+
+    .file-details-container {
+        padding: 10px;
+    }
+
+    .file-info-section {
+        grid-template-columns: 1fr;
+    }
+
+    .tags-section {
+        grid-column: 1;
+    }
+
+    .pdf-viewer-container iframe {
+        height: 400px !important;
+    }
+
+    .info-card {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .file-details-container {
+        padding: 5px;
+    }
+
+    .details-header {
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+        word-break: break-word;
+    }
+
+    .pdf-viewer-container iframe {
+        height: 300px !important;
+    }
+
+    .info-item {
+        margin-bottom: 15px;
+    }
+
+    .info-item label {
+        font-size: 14px;
+    }
+
+    .info-item p {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .tags-list {
+        font-size: 14px;
+    }
+}

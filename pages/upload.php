@@ -147,7 +147,7 @@
 
                                     <!-- Action Buttons -->
                                     <div class="action-buttons">
-                                        <button type="submit" name="btnConfirmUpload" class="btn btn-success btn-block mb-2">
+                                        <button type="submit" name="btnConfirmUpload" class="btn btn-primary btn-block mb-2">
                                             <i class="bi bi-check-circle"></i> Confirm & Upload
                                         </button>
                                         <button type="submit" name="btnCancel" class="btn btn-secondary btn-block">
